@@ -31,9 +31,7 @@ void escolhaInicialEventoMontyHall(Montyhall evento, int s) {
 }
 
 
-int revelaPortaEventoMontyHall(Montyhall) {
-    
-}
+int revelaPortaEventoMontyHall(Montyhall);
 
 trocaPortaEventoMontyHall(Montyhall);
 
