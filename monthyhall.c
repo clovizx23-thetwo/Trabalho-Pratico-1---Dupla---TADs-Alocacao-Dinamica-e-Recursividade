@@ -41,7 +41,7 @@ void trocaPortaEventoMontyHall(Montyhall * evento, int portaRevelada) {
     for (int i = 0; i < 3; i++) {
         if(i != evento->escolhaJogador && i != portaRevelada) {
             printf("A máquina trocou da Porta 0%d para a Porta 0%d!\n",evento->escolhaJogador +1, i+1);
-            evento->escolhaJogador = i;
+            evento->escolhaJogador = i;//nova escolha do jogador "trocada".
             return;
         }
     }

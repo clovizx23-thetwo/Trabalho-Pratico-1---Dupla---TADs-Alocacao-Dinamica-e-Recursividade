@@ -30,6 +30,8 @@ int main(){
     }
 
     float porcentagemAcertos = (acertos / n) * 100.0;
+    printf("\n\nA quantidade de vitórias verificadas foram: %.4f", porcentagemAcertos);
+    printf("\n\nA quantidade de vitórias verificadas foram: %.4f", porcentagemAcertos);
 
     return 0;
 }
