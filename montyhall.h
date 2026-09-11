@@ -1,14 +1,14 @@
-#IFNDEF MONTYHALL_H
-#DEFINE MONTYHALL_H
+#ifndef MONTYHALL_H
+#define MONTYHALL_H
 
 #include <stdbool.h>
 
-typedef struct () {
-    bool portas[3] //true na correta; false nas erradas
+typedef struct eventoMontyhall{
+    bool portas[3]; //true na correta; false nas erradas
     int escolhaJogador;
 } Montyhall;
 
-Montyhall criarEventoMontyHall();
+Montyhall criarEventoMontyHall(int s);
 
 Montyhall destroiEventoMontyHall(Montyhall);
 
@@ -18,4 +18,4 @@ Montyhall trocaPortaEventoMontyHall(Montyhall);
 
 Montyhall verificaVitoriaEventoMontyHall(Montyhall);
 
-#ENDIF
+#endif
