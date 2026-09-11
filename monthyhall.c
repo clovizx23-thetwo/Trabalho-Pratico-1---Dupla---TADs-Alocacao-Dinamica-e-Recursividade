@@ -2,10 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-Montyhall * criarEventoMontyHall(int s) {
+Montyhall * criarEventoMontyHall() {
     Montyhall * evento = (Montyhall*) malloc(sizeof(evento));
     if(evento != NULL) {
-        srand(s);
         int in = rand() % 3;
         for (int i = 0; i < 3; i++) //Passa pelo laço para atribuir os valores falsos tambem
             evento->portas[i] = (i == in ? true : false);
@@ -22,8 +21,7 @@ void destroiEventoMontyHall(Montyhall * evento) {
     free(evento);
 }
 
-void escolhaInicialEventoMontyHall(Montyhall * evento, int s) {
-    srand(s);
+void escolhaInicialEventoMontyHall(Montyhall * evento) {
     int escolha = rand() % 3;
     printf("Escolha da máquina: Porta 0%d\n", escolha+1);
     evento->escolhaJogador = escolha;

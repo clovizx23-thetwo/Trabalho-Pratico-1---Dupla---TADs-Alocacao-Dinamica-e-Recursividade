@@ -8,9 +8,9 @@ typedef struct eventoMontyhall{
     int escolhaJogador;
 } Montyhall;
 
-Montyhall * criarEventoMontyHall(int s);
+Montyhall * criarEventoMontyHall();
 
-void escolhaInicialEventoMontyHall(Montyhall *, int s);
+void escolhaInicialEventoMontyHall(Montyhall *);
 
 void destroiEventoMontyHall(Montyhall *);
 
