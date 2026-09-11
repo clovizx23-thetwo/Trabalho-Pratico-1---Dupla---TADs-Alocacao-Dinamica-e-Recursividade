@@ -7,7 +7,10 @@ int main(){
     int s;
 
     scanf("%d %d", &n, &s);
-    criarEventoMontyHall(s);
+
+    for(int criador = 0; criador < n; criador++){
+        criarEventoMontyHall(s);
+    }
 
     return 0;
 }
