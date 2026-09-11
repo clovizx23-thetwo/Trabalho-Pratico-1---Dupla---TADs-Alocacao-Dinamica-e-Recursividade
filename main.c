@@ -12,7 +12,7 @@ int main(){
 
     for(int i = 0; i < n; i++){
         Montyhall *evento = criarEventoMontyHall(s);
-        escolhaInicialEventoMontyHall(evento);
+        escolhaInicialEventoMontyHall(evento, s);
         int portaRevelada = revelaPortaEventoMontyHall(evento);
         trocaPortaEventoMontyHall(evento, portaRevelada);
         if(verificaVitoriaEventoMontyHall(evento)) {
