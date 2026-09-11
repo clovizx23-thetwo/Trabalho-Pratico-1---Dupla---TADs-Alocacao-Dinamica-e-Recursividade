@@ -29,8 +29,7 @@ int main(){
 
     float porcentagemAcertos = ((float)acertos / n) * 100.0;
 
-    printf("\nA quantidade de vitórias verificadas foram: %.4f", porcentagemAcertos);
-    printf("\nA quantidade de derrotas: %.4f\n", (100.0 - porcentagemAcertos));
-
+    printf("\nQuantidade de vitórias: %.2f%%", porcentagemAcertos);
+    printf("\nQuantidade de derrotas: %.2f%%\n", (100.0 - porcentagemAcertos));
     return 0;
 }
