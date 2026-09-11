@@ -5,7 +5,7 @@
 
 int main(){
     int n; //numero de eventos
-    int acertos = 0;
+    int acertos = 0, erros = 0;
     int s; //semente aleatoria
 
     printf("Insira o número de eventos a serem executados: ");
@@ -23,15 +23,18 @@ int main(){
         if(verificaVitoriaEventoMontyHall(evento)) {
             printf("Acertou!\n\n");
             acertos++;
-        } else
+        } else{
             printf("Errou\n\n");
+            erros++;
+        }
         destroiEventoMontyHall(evento);
-
     }
 
-    float porcentagemAcertos = (acertos / n) * 100.0;
+    float porcentagemAcertos = ((float)acertos / n) * 100.0;
+    float porcentagemErros = ((float)erros / n) * 100.0;
+
     printf("\n\nA quantidade de vitórias verificadas foram: %.4f", porcentagemAcertos);
-    printf("\n\nA quantidade de vitórias verificadas foram: %.4f", porcentagemAcertos);
+    printf("\n\nA quantidade de derrotas: %.4f", porcentagemErros);
 
     return 0;
 }
