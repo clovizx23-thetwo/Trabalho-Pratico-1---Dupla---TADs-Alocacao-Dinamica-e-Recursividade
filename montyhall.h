@@ -10,14 +10,14 @@ typedef struct eventoMontyhall{
 
 Montyhall criarEventoMontyHall(int s);
 
-void escolhaInicialEventoMontyHall(Montyhall);
+void escolhaInicialEventoMontyHall(Montyhall, int s);
 
-Montyhall destroiEventoMontyHall(Montyhall);
+Montyhall destroiEventoMontyHall(Montyhall, int s);
 
-int revelaPortaEventoMontyHall(Montyhall);
+int revelaPortaEventoMontyHall(Montyhall, int s);
 
-trocaPortaEventoMontyHall(Montyhall, int portaRevelada);
+trocaPortaEventoMontyHall(Montyhall, int portaRevelada, int s);
 
-bool verificaVitoriaEventoMontyHall(Montyhall);
+bool verificaVitoriaEventoMontyHall(Montyhall, int s);
 
 #endif
