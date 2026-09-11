@@ -12,7 +12,7 @@ Montyhall * criarEventoMontyHall(int s);
 
 void escolhaInicialEventoMontyHall(Montyhall *, int s);
 
-Montyhall * destroiEventoMontyHall(Montyhall *);
+void destroiEventoMontyHall(Montyhall *);
 
 int revelaPortaEventoMontyHall(Montyhall *);
 

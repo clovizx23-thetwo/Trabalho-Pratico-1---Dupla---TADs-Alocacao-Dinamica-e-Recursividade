@@ -4,7 +4,7 @@
 
 Montyhall * criarEventoMontyHall(int s) {
     Montyhall * evento = (Montyhall*) malloc(sizeof(evento));
-    if(!evento) {
+    if(evento != NULL) {
         srand(s);
         int in = rand() % 3;
         for (int i = 0; i < 3; i++) //Passa pelo laço para atribuir os valores falsos tambem
@@ -18,9 +18,8 @@ Montyhall * criarEventoMontyHall(int s) {
 
 }
 
-Montyhall * destroiEventoMontyHall(Montyhall * evento) {
+void destroiEventoMontyHall(Montyhall * evento) {
     free(evento);
-    return evento;
 }
 
 void escolhaInicialEventoMontyHall(Montyhall * evento, int s) {
@@ -34,13 +33,26 @@ void escolhaInicialEventoMontyHall(Montyhall * evento, int s) {
 int revelaPortaEventoMontyHall(Montyhall * evento) {
     for (int i = 0; i < 3; i++) {
         if(i != evento->escolhaJogador && (!evento->portas[i])) {
-            printf("A porta %d é uma porta incorreta!\n", i+1);
+            printf("Foi revelado a Porta 0%d e é uma porta incorreta!\n", i+1);
             return i;
+        }
+    }
+    return -1;
+}
+
+void trocaPortaEventoMontyHall(Montyhall * evento, int portaRevelada) {
+    for (int i = 0; i < 3; i++) {
+        if(i != evento->escolhaJogador && i != portaRevelada) {
+            printf("A máquina trocou da Porta 0%d para a Porta 0%d!\n",evento->escolhaJogador +1, i+1);
+            evento->escolhaJogador = i;
+            return;
         }
     }
 }
 
-
-void trocaPortaEventoMontyHall(Montyhall);
-
-bool verificaVitoriaEventoMontyHall(Montyhall);
+bool verificaVitoriaEventoMontyHall(Montyhall * evento) {
+    if(evento->portas[evento->escolhaJogador])
+        return true;
+    else
+        return false;
+}
