@@ -21,7 +21,7 @@ int main(){
             printf("Acertou!\n");
             acertos++;
         } else
-            printf("Errou");
+            printf("Errou\n");
         destroiEventoMontyHall(evento);
     }
 
