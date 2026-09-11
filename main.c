@@ -21,10 +21,10 @@ int main(){
         int portaRevelada = revelaPortaEventoMontyHall(evento);
         trocaPortaEventoMontyHall(evento, portaRevelada);
         if(verificaVitoriaEventoMontyHall(evento)) {
-            printf("Acertou!\n\n");
+            printf("->Acertou!\n\n");
             acertos++;
         } else{
-            printf("Errou\n\n");
+            printf("->Errou\n\n");
             erros++;
         }
         destroiEventoMontyHall(evento);
@@ -33,8 +33,8 @@ int main(){
     float porcentagemAcertos = ((float)acertos / n) * 100.0;
     float porcentagemErros = ((float)erros / n) * 100.0;
 
-    printf("\n\nA quantidade de vitórias verificadas foram: %.4f", porcentagemAcertos);
-    printf("\n\nA quantidade de derrotas: %.4f", porcentagemErros);
+    printf("\nA quantidade de vitórias verificadas foram: %.4f", porcentagemAcertos);
+    printf("\nA quantidade de derrotas: %.4f\n", porcentagemErros);
 
     return 0;
 }
