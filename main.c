@@ -11,14 +11,14 @@ int main(){
     scanf("%d %d", &n, &s);
 
     for(int i = 0; i < n; i++){
-        Montyhall evento = criarEventoMontyHall(s);
+        Montyhall *evento = criarEventoMontyHall(s);
         escolhaInicialEventoMontyHall(evento);
         int portaRevelada = revelaPortaEventoMontyHall(evento);
         trocaPortaEventoMontyHall(evento, portaRevelada);
         if(verificaVitoriaEventoMontyHall(evento)) {
             acertos++;
         }
-
+        evento = destroiEventoMontyHall(evento);
     }
 
     float porcentagemAcertos = (acertos / n) * 100.0;

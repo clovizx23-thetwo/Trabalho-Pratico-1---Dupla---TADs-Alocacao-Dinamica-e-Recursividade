@@ -12,12 +12,12 @@ Montyhall criarEventoMontyHall(int s);
 
 void escolhaInicialEventoMontyHall(Montyhall, int s);
 
-Montyhall destroiEventoMontyHall(Montyhall, int s);
+Montyhall destroiEventoMontyHall(Montyhall);
 
-int revelaPortaEventoMontyHall(Montyhall, int s);
+int revelaPortaEventoMontyHall(Montyhall);
 
-trocaPortaEventoMontyHall(Montyhall, int portaRevelada, int s);
+trocaPortaEventoMontyHall(Montyhall, int portaRevelada);
 
-bool verificaVitoriaEventoMontyHall(Montyhall, int s);
+bool verificaVitoriaEventoMontyHall(Montyhall);
 
 #endif
