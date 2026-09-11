@@ -7,7 +7,7 @@ int main(){
     int s;
 
     scanf("%d %d", &n, &s);
-    
+    criarEventoMontyHall(s);
 
     return 0;
 }
