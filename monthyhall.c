@@ -29,7 +29,6 @@ void escolhaInicialEventoMontyHall(Montyhall * evento, int s) {
     evento->escolhaJogador = escolha;
 }
 
-
 int revelaPortaEventoMontyHall(Montyhall * evento) {
     for (int i = 0; i < 3; i++) {
         if(i != evento->escolhaJogador && (!evento->portas[i])) {
