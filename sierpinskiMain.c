@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <math.h>
 
-int sier(){
+int main(){
     int p, n;
     int i, j, size;
-    printf("Digite o nuemero para ser o expoente da matriz: ");
+    printf("Digite o numero para ser o expoente da matriz: ");
     scanf("%d", &p);
     //calculando os laodos da matriz
     n = pow(3, p);
