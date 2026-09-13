@@ -6,7 +6,7 @@
 int main(){
     int p, n;
     int i, j, size;
-    
+
     printf("Digite o numero para ser o expoente da matriz: ");
     scanf("%d", &p);
     //calculando os laodos da matriz
@@ -16,15 +16,16 @@ int main(){
     int **matN = criarMatriz(n);
     if(matN != NULL){
         matN = tapeteSierpinski(i, j, n, matN);
-    }
-
-    for(int line = 0; line < n; line++){
-        for(int col = 0; col < n; col++){
-
+        
+        for(int line = 0; line < n; line++){
+            for(int col = 0; col < n; col++)
+                printf("%d", matN[line][col]);
+                if(line <= col)
+                    printf(" ");
+            printf("\n");
         }
-    }
 
-    liberaSierpinski(matN, n);
-    
+        liberaSierpinski(matN, n);
+    }
     return 0;
 }

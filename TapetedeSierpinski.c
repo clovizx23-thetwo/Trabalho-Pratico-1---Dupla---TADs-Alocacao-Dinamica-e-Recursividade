@@ -4,7 +4,14 @@
 #include <math.h>
 
 void tapeteSierpinski(int i, int j, int size, int **M){
+    if(size == 1){
+        M[i][j] = 1;
+        return;
+    }
 
+    int suBloco = size / 3;
+
+    
 }
 int **criarMatriz(int n){
     int **tapMat = (int**)malloc(sizeof(int*)*n);
