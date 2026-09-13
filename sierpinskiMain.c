@@ -15,13 +15,14 @@ int main(){
 
     int **matN = criarMatriz(n);
     if(matN != NULL){
-        matN = tapeteSierpinski(i, j, n, matN);
+        tapeteSierpinski(i, j, n, matN);
         
         for(int line = 0; line < n; line++){
-            for(int col = 0; col < n; col++)
+            for(int col = 0; col < n; col++){
                 printf("%d", matN[line][col]);
                 if(line <= col)
                     printf(" ");
+            }
             printf("\n");
         }
 
