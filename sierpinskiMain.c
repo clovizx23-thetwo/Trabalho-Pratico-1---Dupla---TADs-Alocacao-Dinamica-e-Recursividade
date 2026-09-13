@@ -13,12 +13,16 @@ int main(){
     printf("\nO valor de n eh: %d\n", n);
 
     int **matN = criarMatriz(n);
-    
-    for(int i = 0; i < n; i++){
-        if(matN != NULL){
-            tapeteSierpinski(i, j, n, matN);
+
+    for(int line = 0; line < n; line++){
+        for(int col = 0; col < n; col++){
+            if(matN != NULL){
+                tapeteSierpinski(i, j, n, matN);
+            }
         }
     }
 
+    liberaSierpinski(matN, n);
+    
     return 0;
 }
