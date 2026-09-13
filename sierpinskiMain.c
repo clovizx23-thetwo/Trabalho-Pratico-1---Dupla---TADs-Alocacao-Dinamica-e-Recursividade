@@ -12,8 +12,9 @@ int main(){
     n = pow(3, p);
     printf("\nO valor de n eh: %d\n", n);
 
+    int **matN = criarMatriz(n);
+    
     for(int i = 0; i < n; i++){
-        int **matN = criarMatriz(n);
         if(matN != NULL){
             tapeteSierpinski(i, j, n, matN);
         }
