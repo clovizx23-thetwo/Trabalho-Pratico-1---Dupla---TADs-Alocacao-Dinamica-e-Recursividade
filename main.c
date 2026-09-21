@@ -64,7 +64,7 @@ int main(){
         }
         printf("\n");
 
-    }
         liberaSierpinski(matN, ns);
+    }
     return 0;
 }
