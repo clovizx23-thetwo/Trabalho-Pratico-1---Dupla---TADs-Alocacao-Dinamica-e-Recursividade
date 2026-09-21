@@ -31,5 +31,31 @@ int main(){
 
     printf("\nQuantidade de vitórias: %.2f%%", porcentagemAcertos);
     printf("\nQuantidade de derrotas: %.2f%%\n", (100.0 - porcentagemAcertos));
+
+    int p, ns, size;
+
+    printf("Digite o numero para ser o expoente da matriz: ");
+    scanf("%d", &p);
+    //calculando os laodos da matriz
+    ns = pow(3, p);
+    printf("\nO valor de n eh: %d\n", ns);
+
+    int **matN = criarMatriz(n);
+
+    if(matN != NULL){
+        
+        for(int line = 0; line < ns; line++){
+            for(int col = 0; col < ns; col++){
+                tapeteSierpinski(line, col, ns, matN);
+                // printf("%d", matN[line][col]);
+                // if(line <= col)
+                //     printf(" ");
+            }
+            printf("\n");
+        }
+
+        liberaSierpinski(matN, ns);
+    }
+    
     return 0;
 }

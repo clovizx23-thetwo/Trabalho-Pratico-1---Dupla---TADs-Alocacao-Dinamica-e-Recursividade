@@ -1,4 +1,4 @@
-#include "TapetedeSierpinski.h"
+#include "montyhall.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
