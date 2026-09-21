@@ -2,6 +2,7 @@
 #define MONTYHALL_H
 
 #include <stdbool.h>
+#include <math.h>
 
 typedef struct eventoMontyhall{
     bool portas[3]; //true na correta; false nas erradas
