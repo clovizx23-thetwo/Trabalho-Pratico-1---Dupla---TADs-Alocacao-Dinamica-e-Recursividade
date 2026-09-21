@@ -1,3 +1,6 @@
+//26.1.4147
+//26.1.4048
+
 #ifndef MONTYHALL_H
 #define MONTYHALL_H
 
@@ -19,5 +22,14 @@ int revelaPortaEventoMontyHall(Montyhall *);
 void trocaPortaEventoMontyHall(Montyhall *, int portaRevelada);
 
 bool verificaVitoriaEventoMontyHall(Montyhall *);
+
+void mainMontyhall();
+
+
+//Sierpinski
+void tapeteSierpinski(int i, int j, int size, int **M);
+int ** criarMatriz(int n);
+void liberaSierpinski(int **matriz, int n);
+void mainSierpinski();
 
 #endif

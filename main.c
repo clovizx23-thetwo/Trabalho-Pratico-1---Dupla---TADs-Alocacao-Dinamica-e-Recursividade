@@ -1,37 +1,42 @@
+//26.1.4147
+//26.1.4048
+
 #include "montyhall.h"
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <time.h>
 
-int main(){
-    int n; //numero de eventos
-    int acertos = 0;
-    int s; //semente aleatoria
+int main(){    
+    printf("\n========TRABALHO PRÁTICO 01========\n");
+    printf("\nAlunos///////////////|");
+    printf("\nClovis Loyola Soares |");
+    printf("\nValter Simão         |");
+    printf("\n/////////////////////|\n");
 
-    printf("Insira o número de eventos a serem executados: ");
-    scanf("%d", &n);
-    printf("Insire a semente a ser utilizada: ");
-    scanf("%d", &s);
-    srand(s);
+    int escolha;
+    
+    printf("\n1 - PARADOXO DE MONTY HALL");
+    printf("\n2 - TAPETE DE SIERSPINSKI\n");
 
-    for(int i = 0; i < n; i++){
-        Montyhall *evento = criarEventoMontyHall();
-        printf("\n%d|%d|%d\n", evento->portas[0] ? 1 : 0, evento->portas[1] ? 1 : 0, evento->portas[2] ? 1 : 0);//teste
-        escolhaInicialEventoMontyHall(evento);
-        int portaRevelada = revelaPortaEventoMontyHall(evento);
-        trocaPortaEventoMontyHall(evento, portaRevelada);
-        if(verificaVitoriaEventoMontyHall(evento)) {
-            printf("->Acertou!\n\n");
-            acertos++;
-        } else {
-            printf("->Errou!\n\n");
+    do{
+        printf("\nSUA ESCOLHA: ");
+        scanf("%d", &escolha);
+        if(escolha != 1 && escolha != 2){
+            printf("\nOPCAO ERRADA\n");
         }
-        destroiEventoMontyHall(evento);
+    }while(escolha == 1 && escolha == 2);
+
+    switch(escolha){
+        case 1:
+            mainMontyhall();
+            break;
+        
+        case 2:
+            mainSierpinski();
+            break;
     }
 
-    float porcentagemAcertos = ((float)acertos / n) * 100.0;
-
-    printf("\nQuantidade de vitórias: %.2f%%", porcentagemAcertos);
-    printf("\nQuantidade de derrotas: %.2f%%\n", (100.0 - porcentagemAcertos));
     return 0;
 }
