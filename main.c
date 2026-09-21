@@ -1,6 +1,7 @@
 #include "montyhall.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <time.h>
 
 int main(){
@@ -47,21 +48,18 @@ int main(){
         for(int line = 0; line < ns; line++){
             for(int col = 0; col < ns; col++){
                 tapeteSierpinski(line, col, ns, matN);
-                // printf("%d", matN[line][col]);
-                // if(line <= col)
-                //     printf(" ");
             }
-            printf("\n");
         }
 
-        for(int line2 = 0; line2 < ns; line2++){
-            for(int col2 = 0; col2 < ns; col2++){
-                if(col2 > 0 && col2 == ns-1)
+        for(int line2 = line; line2 < ns; line2++){
+            for(int col2 = col; col2 < ns; col2++){
+                if(col2 < ns-1)
                     printf(" ");
                 printf("%d", matN[line2][col2]);
             }
             printf("\n");
         }
+        printf("\n");
 
         liberaSierpinski(matN, ns);
     }
