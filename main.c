@@ -9,7 +9,8 @@ int main(){
     int acertos = 0;
     int s; //semente aleatoria
 
-    printf("Insira o número de eventos a serem executados: ");
+    printf("\n========MONTHYHALL========\n");
+    printf("\nInsira o número de eventos a serem executados: ");
     scanf("%d", &n);
     printf("Insire a semente a ser utilizada: ");
     scanf("%d", &s);
@@ -33,15 +34,17 @@ int main(){
     printf("\nQuantidade de vitórias: %.2f%%", porcentagemAcertos);
     printf("\nQuantidade de derrotas: %.2f%%\n", (100.0 - porcentagemAcertos));
 
+    printf("\n\n========TAPETE DE SIERPINSKI========");
+
     int p, ns;
 
-    printf("Digite o numero para ser o expoente da matriz: ");
+    printf("\n\nDigite o numero para ser o expoente da matriz: ");
     scanf("%d", &p);
     //calculando os laodos da matriz
     ns = pow(3, p);
     printf("\nO valor de n eh: %d\n", ns);
 
-    int **matN = criarMatriz(n);
+    int **matN = criarMatriz(ns);
 
     if(matN != NULL){
         
@@ -61,8 +64,7 @@ int main(){
         }
         printf("\n");
 
-        liberaSierpinski(matN, ns);
     }
-
+        liberaSierpinski(matN, ns);
     return 0;
 }
