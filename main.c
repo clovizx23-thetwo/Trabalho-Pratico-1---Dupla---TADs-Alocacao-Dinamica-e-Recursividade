@@ -32,7 +32,7 @@ int main(){
     printf("\nQuantidade de vitórias: %.2f%%", porcentagemAcertos);
     printf("\nQuantidade de derrotas: %.2f%%\n", (100.0 - porcentagemAcertos));
 
-    int p, ns, size;
+    int p, ns;
 
     printf("Digite o numero para ser o expoente da matriz: ");
     scanf("%d", &p);
@@ -54,8 +54,17 @@ int main(){
             printf("\n");
         }
 
+        for(int line2 = 0; line2 < ns; line2++){
+            for(int col2 = 0; col2 < ns; col2++){
+                if(col2 > 0 && col2 == ns-1)
+                    printf(" ");
+                printf("%d", matN[line2][col2]);
+            }
+            printf("\n");
+        }
+
         liberaSierpinski(matN, ns);
     }
-    
+
     return 0;
 }

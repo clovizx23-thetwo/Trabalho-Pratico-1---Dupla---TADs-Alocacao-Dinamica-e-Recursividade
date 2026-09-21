@@ -12,8 +12,9 @@ void tapeteSierpinski(int i, int j, int size, int **M){
     //cada quadradinho tem tamanho [size / 3], pq são 9 quadradinhos o tapete total
     int quadradoInterno = size / 3;
 
-    
+    for(int l = i + quadradoInterno;)
 
+    tapeteSierpinski(i, j, quadradoInterno, M); //quadrado superior esquerdo
 }
 int **criarMatriz(int n){
     int **tapMat = (int**)malloc(sizeof(int*)*n);
