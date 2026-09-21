@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 void tapeteSierpinski(int i, int j, int size, int **M){
     if(size == 1){

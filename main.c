@@ -51,11 +51,11 @@ int main(){
             }
         }
 
-        for(int line2 = line; line2 < ns; line2++){
-            for(int col2 = col; col2 < ns; col2++){
+        for(int line2 = 0; line2 < ns; line2++){
+            for(int col2 = 0; col2 < ns; col2++){
+                printf("%d", matN[line2][col2]);
                 if(col2 < ns-1)
                     printf(" ");
-                printf("%d", matN[line2][col2]);
             }
             printf("\n");
         }
