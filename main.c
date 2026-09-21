@@ -23,6 +23,8 @@ int main(){
         if(verificaVitoriaEventoMontyHall(evento)) {
             printf("->Acertou!\n\n");
             acertos++;
+        } else {
+            printf("->Errou!\n\n");
         }
         destroiEventoMontyHall(evento);
     }
