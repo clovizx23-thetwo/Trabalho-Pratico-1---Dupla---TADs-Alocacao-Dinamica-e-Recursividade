@@ -48,11 +48,7 @@ int main(){
 
     if(matN != NULL){
         
-        for(int line = 0; line < ns; line++){
-            for(int col = 0; col < ns; col++){
-                tapeteSierpinski(line, col, ns, matN);
-            }
-        }
+        tapeteSierpinski(0, 0, ns, matN);
 
         for(int line2 = 0; line2 < ns; line2++){
             for(int col2 = 0; col2 < ns; col2++){

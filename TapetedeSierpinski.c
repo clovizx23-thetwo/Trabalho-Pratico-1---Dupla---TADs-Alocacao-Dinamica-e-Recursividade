@@ -14,8 +14,9 @@ void tapeteSierpinski(int i, int j, int size, int **M){
     int dimensaoDoInterno = size / 3;
 
     //montando o centro do Tapete [coord + tamanho] == dist. do centro
-    for(int line = i + dimensaoDoInterno; line < i * dimensaoDoInterno; line++){
-        for(int colum = j + dimensaoDoInterno; colum < j * dimensaoDoInterno; colum++){
+    //
+    for(int line = i + dimensaoDoInterno; line <  i + (2 * dimensaoDoInterno); line++){
+        for(int colum = j + dimensaoDoInterno; colum <  j + (2 * dimensaoDoInterno); colum++){
             M[line][colum] = 0;
         }
     }
