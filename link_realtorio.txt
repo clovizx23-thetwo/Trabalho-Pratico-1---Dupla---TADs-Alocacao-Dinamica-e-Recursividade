@@ -1,0 +1,32 @@
+Para a implementação da fractal Tapete de Sierpinski foi criada
+e alcoada dinamicamente uma matriz 'M' de tamanho n [n x n],
+inicialmente preenchida com números '1';
+
+
+
+
+
+
+
+
+
+
+ utilizaremos uma matriz quadrada Mn×n
+(em que n é uma potência de 3) para nos auxiliar. Nesta, cada elemento cij ∈ {0, 1}
+representará um “subquadrado” de lado 1, assumindo o valor 0 quando for removido e 1
+quando não for removido. Além disso, servirão como critério de parada.
+Sua tarefa consiste em implementar a função:
+
+    void tapeteSierpinski(int i, int j, int size, int M ),
+
+onde (i, j) representa a coordenada do ponto central do “subquadrado” analisado,
+size o tamanho do lado desse “subquadrado”, e M a matriz. Essa função irá, recursivamente,
+modificar a matriz M de acordo com a figura do processo de construção descrito.
+
+Entrada: Seu programa receberá um número p ∈ N, que será o expoente para gerar o
+tamanho n = 3^p da matriz Mn×n. ATENÇÃO: como o número p é recebido em tempo de
+execução, a matriz M será alocada dinamicamente.
+
+Saı́da: Seu programa deverá imprimir no terminal uma representação gráfica da matriz
+M gerada. ATENÇÃO: para p > 4, é provável que a figura gerada não caiba no terminal.
+Não se preocupe, isso não afetará a sua avaliação.
