@@ -26,7 +26,7 @@ int main(){
         if(escolha != 1 && escolha != 2){
             printf("\nOPCAO ERRADA\n");
         }
-    }while(escolha == 1 && escolha == 2);
+    }while(escolha != 1 && escolha != 2);
 
     switch(escolha){
         case 1:
