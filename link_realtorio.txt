@@ -1,3 +1,5 @@
+Parte 2 - Recursividade e Fractal de Sierpinski
+
 Para a implementação da fractal Tapete de Sierpinski foi criada
 e alocada dinamicamente uma matriz 'M' de tamanho n [n x n],
 inicialmente preenchida com números 1's por meio da função

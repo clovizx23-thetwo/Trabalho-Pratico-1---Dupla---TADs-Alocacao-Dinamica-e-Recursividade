@@ -30,7 +30,7 @@ void tapeteSierpinski(int i, int j, int size, int **M){
     tapeteSierpinski(i, j + (2 * dimensaoDoInterno), dimensaoDoInterno, M);//superior direito
 
     tapeteSierpinski(i + dimensaoDoInterno, j, dimensaoDoInterno, M);//meio esquerdo
-    //CNTRO TEÓRICO
+    //CNTRO ZERADO
     tapeteSierpinski(i + dimensaoDoInterno, j + (2 * dimensaoDoInterno), dimensaoDoInterno, M);//meio direito
 
     tapeteSierpinski(i + (2 * dimensaoDoInterno), j, dimensaoDoInterno, M); //inferior esquerdo
