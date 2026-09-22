@@ -1,32 +1,69 @@
 Para a implementação da fractal Tapete de Sierpinski foi criada
-e alcoada dinamicamente uma matriz 'M' de tamanho n [n x n],
-inicialmente preenchida com números '1';
+e alocada dinamicamente uma matriz 'M' de tamanho n [n x n],
+inicialmente preenchida com números 1's por meio da função
+'int **criarMatriz()', o tapete já se inicia de forma
+"inteira", sendo o trabalho da função 'void tapeteSierpinski()'
+preencher os centros com 0's. Para os cálculos de tamanho da matriz
+utilizamos a fórmula fornecida pelo professor que consiste em
+uma potência de base 3, denotada por: 3^p, a base da potência
+explica a divisão do tamanho total do fractal por 3 que representa
+o tamanho individual de cada "sub quadrado", sendo todo o processo de 
+obteção do tamanho deste em divisões por 3 [size/3], muito semelhante
+ao processo de uma função logarítmica, porém, com delimitação de parada.
 
+Exemplo: Se 'size == 27', então 'p = 3', assim 'M[n x n] => M[27 x 27]',
+isso implica que 'dimensaoDoInterno = 27/3 = 9', que por sua vez corresponde
+a 9 "sub quadrados" de tamanho M[9 x 9]:
 
+1 1 1 1 1 1 1 1 1   1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 0 1 1 0 1 1 0 1   1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1
+1 1 1 1 1 1 1 1 1   1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 0 0 0 1 1 1   1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1
+1 0 1 0 0 0 1 0 1   1 0 1 0 0 0 1 0 1 1 0 1 0 0 0 1 0 1
+1 1 1 0 0 0 1 1 1   1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1
+1 1 1 1 1 1 1 1 1   1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 0 1 1 0 1 1 0 1   1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1
+1 1 1 1 1 1 1 1 1   1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 
+1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+1 0 1 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 0 1 1 0 1 1 0 1
+1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+1 1 1 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 1 1 1
+1 0 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1
+1 1 1 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 1 1 1
+1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+1 0 1 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 0 1 1 0 1 1 0 1
+1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1
+1 0 1 0 0 0 1 0 1 1 0 1 0 0 0 1 0 1 1 0 1 0 0 0 1 0 1
+1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 
+A delimitação de parada, conforme informado, deve ser quando 'size' (tamanho
+do lado) for igual a 1, na função recursiva esta é a primeira verificação,
+interrompendo a chamada da recursão em específico. O motivo pelo qual decidimos
+este ponto de parada se explica quando uma matriz se reduzir ao tamanho
+'size == 1', a divisibilidade deste tamanho em 9 partes se torna
+impossível em valores inteiros, pois tamanho 1 é o tamanho base.
 
+Como dito antes, toda a matriz é preenchida por números 1's. Dentro da
+função, há dois laços de busca pelo centro, que é delimitado pelo deslocamento
+em relação às coordenadas de origem (i, j), onde, esta busca consiste em
+identificar o centro como sendo um terço (1/3) de distância da origem até
+dois terços (2/3) da figura total. Assim, considerando a forma base, esta
+lógica se aplica a toda forma de tamanho, pois quaisquer que sejam os tamanhos,
+sempre serão múltiplos divisíveis 3 por derivarem de uma exponenciação de base 3.
+Todos os 8 casos de recursão vão realizar o processo de divisão do tamanho atual
+até chegar a 1 (por exemplo, um "sub quadrado" de lado 3 marca o último processo
+de recursão completo da função, finalizando em lado 1).
 
-
-
-
-
- utilizaremos uma matriz quadrada Mn×n
-(em que n é uma potência de 3) para nos auxiliar. Nesta, cada elemento cij ∈ {0, 1}
-representará um “subquadrado” de lado 1, assumindo o valor 0 quando for removido e 1
-quando não for removido. Além disso, servirão como critério de parada.
-Sua tarefa consiste em implementar a função:
-
-    void tapeteSierpinski(int i, int j, int size, int M ),
-
-onde (i, j) representa a coordenada do ponto central do “subquadrado” analisado,
-size o tamanho do lado desse “subquadrado”, e M a matriz. Essa função irá, recursivamente,
-modificar a matriz M de acordo com a figura do processo de construção descrito.
-
-Entrada: Seu programa receberá um número p ∈ N, que será o expoente para gerar o
-tamanho n = 3^p da matriz Mn×n. ATENÇÃO: como o número p é recebido em tempo de
-execução, a matriz M será alocada dinamicamente.
-
-Saı́da: Seu programa deverá imprimir no terminal uma representação gráfica da matriz
-M gerada. ATENÇÃO: para p > 4, é provável que a figura gerada não caiba no terminal.
-Não se preocupe, isso não afetará a sua avaliação.
+Por fim, os valores de algumas coordenadas passadas recursivamente
+'j + (2 * dimensaoDoInterno)', derivam do processo de identificação
+do centro. Tanto linhas como colunas das figuras dos extremos direitos
+e inferiores representam a soma entre a coordenada base e o dobro do
+tamanho do lado, independente do lado fornecido em tempo de execução.
