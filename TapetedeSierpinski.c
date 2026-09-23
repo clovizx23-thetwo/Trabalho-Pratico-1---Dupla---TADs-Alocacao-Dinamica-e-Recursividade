@@ -116,7 +116,7 @@ void mainSierpinski() {
                 if(matN[line2][col2] == 0){
                     printf(" ");
                 }else{
-                    printf(BG_WHITE(" "));
+                    printf(WHITE("1"));
                 }
 
                 if(col2 < ns-1)
