@@ -72,7 +72,13 @@ void mainSierpinski() {
 
         for(int line2 = 0; line2 < ns; line2++){
             for(int col2 = 0; col2 < ns; col2++){
-                printf("%d", matN[line2][col2]);
+                
+                if(matN[line2][col2] == 0){
+                    printf(" ");
+                }else{
+                    printf(BG_WHITE(" "));
+                }
+
                 if(col2 < ns-1)
                     printf(" ");
             }
